@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/070428bd88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Chatbot</title>
+</head>
+<body>
+    
+    <section class="msger">
+        <header class="msger-header">
+            <div class="msger-header-title">
+                <img src="src/images/chatbot.png" alt="ChatBot">
+                <p>ChatBot</p>
+                <button class="change-bg" onclick="toggleBackground()"><i class="bx bx-moon"></i></button>
+            </div><!-- msger-header-title-->
+        </header><!-- msger-header-->
+        <main class="msger-chat">
+            <div class="msg left-msg">
+                <div class="msg-img" style="background-image: url(src/images/bot.jpg);"></div>
+                <div class="msg-bubble">
+                    <div class="msg-info">
+                        <div class="msg-info-name">BOT</div>
+                        <div class="msg-info-time">10:45</div>
+                    </div><!-- msg-info-->
+                    
+                    <div class="msg-text">
+                        Olá! Escolha uma opção: <br>
+                        1️⃣ Varredura<br>2️⃣ Master<br>3️⃣ Sair 😀
+                    </div><!-- msg-text-->
+                </div><!-- msg-bubble-->
+            </div><!-- msg-->
+            <div class="msg right-msg">
+                <div class="msg-img" style="background-image: url(src/images/user.jpeg);"></div>
+                <div class="msg-bubble">
+                    <div class="msg-info">
+                        <div class="msg-info-name">Code Mo</div>
+                        <div class="msg-info-time">10:46</div>
+                    </div><!-- msg-info-->
+                    
+                    <div class="msg-text">
+                        <!--Aqui é o texto -->
+                    </div><!-- msg-text-->
+                </div><!-- msg-bubble-->
+            </div>
+        </main><!-- msger-chat-->
+        <form class="msger-inputarea">
+            <input type="text" class="msger-input" placeholder="Digite sua mensagem...">
+            <button type="submit" class="msger-send-btn"><i class="fa fa-paper-plane"></i></button>
+        </form>
+    </section><!-- msger -->
+
+
+    <script src="src/js/main.js"></script>
+</body>
+</html>
