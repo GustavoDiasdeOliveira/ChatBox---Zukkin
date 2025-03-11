@@ -93,36 +93,45 @@ function handleUserChoice(choice) {
   // Normaliza a escolha do usuário para facilitar a comparação (tudo minúsculo)
   const normalizedChoice = choice.toLowerCase();
 
+  // Verifica se a opção é "0" para voltar ao início
+  if (normalizedChoice === "0" || normalizedChoice.includes("voltar")) {
+    addMessage("🔄 Voltando...", false); // Mensagem do bot indicando que está voltando
+    setTimeout(() => {
+      startChat();
+    }, 2500); // Pequeno atraso para simular transição
+    return;
+  }
+
   // Lógica para o início do chat
   if (currentStep === "inicio") {
     if (normalizedChoice === "1" || normalizedChoice.includes("varredura")) {
       response =
-        "📌 Você escolheu Varredura. Selecione uma opção:<br><br>1️⃣ Produto Família<br>2️⃣ Produtos abreviados <br>3️⃣ Diferença de Unidade e Promoção<br>4️⃣Sobre o Qtd<br>5️⃣Produtos diferentes (Banana, Frango...)<br>";
+        "📌 Você escolheu Varredura. Selecione uma opção:<br><br>1️⃣ Produto Família<br>2️⃣ Produtos abreviados <br>3️⃣ Diferença de Unidade e Promoção<br>4️⃣Sobre o Qtd<br>5️⃣Produtos diferentes (Banana, Frango...)<br> 0️⃣ Voltar";
       currentStep = "varredura"; // Atualiza o passo para varredura
     } else if (
       normalizedChoice === "2" ||
       normalizedChoice.includes("master")
     ) {
       response =
-        "📌 Você escolheu Master. Selecione uma opção:<br><br>1️⃣ Cálculo dos 30%<br>2️⃣ Dúvida na descrição<br>3️⃣ Produtos PP<br>4️⃣ Produtos sem marca (PP)<br>5️⃣ Localização<br> 6️⃣ Descrição Bugada no Danieli<br>7️⃣ PP Danieli <br> 8️⃣ PP Passarela <br>9️⃣ Quais aplicativos usar no Master?<br> 🔟 Como usar a Calculadora PP<br>";
+        "📌 Você escolheu Master. Selecione uma opção:<br><br>1️⃣ Cálculo dos 30%<br>2️⃣ Dúvida na descrição<br>3️⃣ Produtos PP<br>4️⃣ Produtos sem marca (PP)<br>5️⃣ Localização<br> 6️⃣ Descrição Bugada no Danieli<br>7️⃣ PP Danieli <br> 8️⃣ PP Passarela <br>9️⃣ Quais aplicativos usar no Master?<br> 🔟 Como usar a Calculadora PP<br> 0️⃣ Voltar";
       currentStep = "master"; // Atualiza o passo para master
     } else if (
       normalizedChoice === "3" ||
       normalizedChoice.includes("pesquisa de site")
     ) {
       response =
-        "📌 Você escolheu Pesquisa de site. Selecione uma opção:<br><br>1️⃣ Pode associar Família?<br>2️⃣ Como funciona a Pesquisa de site?<br>";
+        "📌 Você escolheu Pesquisa de site. Selecione uma opção:<br><br>1️⃣ Pode associar Família?<br>2️⃣ Como funciona a Pesquisa de site?<br>0️⃣ Voltar";
       currentStep = "Pesquisia de site"; // Atualiza o passo para Pesquisa de site
     } else if (
       normalizedChoice === "4" ||
       normalizedChoice.includes("encarte")
     ) {
       response =
-        "📌 Você escolheu Encarte. Selecione uma opção:<br><br>1️⃣ Como subir encarte<br>2️⃣ Como adicionar preço no encarte<br>3️⃣ Como subir encartes de site <br>4️⃣ Como salvar as imagens";
+        "📌 Você escolheu Encarte. Selecione uma opção:<br><br>1️⃣ Como subir encarte<br>2️⃣ Como adicionar preço no encarte<br>3️⃣ Como subir encartes de site <br>4️⃣ Como salvar as imagens <br> 0️⃣ Voltar";
       currentStep = "encarte";
     } else if (normalizedChoice === "5" || normalizedChoice.includes("Bonus")) {
       response =
-        " 🚪 Você escolheu Bonus. Selecione uma opção:<br><br>1️⃣ Qual é a senha da internet? 🔐😎";
+        " 🚪 Você escolheu Bonus. Selecione uma opção:<br><br>1️⃣ Qual é a senha da internet? 🔐😎 <br> 0️⃣ Voltar";
       currentStep = "Bonus";
     } else {
       response = "❌ Opção inválida! Escolha uma das opções acima.";
